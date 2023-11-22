@@ -1,36 +1,23 @@
-
 #include <iostream>
-#include <iomanip>
 using namespace std;
-int main()
-{
-    int i = 0, a;
-    char b,choice;
-    do
-    {
-        cout << endl
-             << "enter a character to check :" << endl;
-        cin >> b;
-        a = ((int)b);
-         if ((a >= 32 && a <= 47) || (a >= 60 && a <= 64) || (a >= 91 && a <= 96) || (a >= 123 && a <= 126))
-        {
-            cout << "character " << b << " is a special character." << endl;
-        }
-        else if ((a > 64 && a < 91) || (a > 96 && a < 123))
-        {
-            cout << "character " << b << " is a alphabate." << endl;
-        }
-        else if (a >= 48 && a <= 57)
-        {
-            cout << "character " << b << " is a number." << endl;
-        }
-        else
-        {
-            cout << "not a valid character." << endl;
-        }
-        cout<<"want to continue:y)yes"<<endl;
-        cin>>choice;
-    } while (choice=='y');
+
+int main() {
+    char ch;
+
+    cout << "Enter a character: ";
+    cin >> ch;
+
+    int asciiValue = static_cast<int>(ch);
+
+    if (asciiValue >= 65 && asciiValue <= 90) {
+        cout << ch << " is an uppercase letter." << endl;
+    } else if (asciiValue >= 97 && asciiValue <= 122) {
+        cout << ch << " is a lowercase letter." << endl;
+    } else if (asciiValue >= 48 && asciiValue <= 57) {
+        cout << ch << " is a digit." << endl;
+    } else {
+        cout << ch << " is a special character." << endl;
+    }
 
     return 0;
 }
